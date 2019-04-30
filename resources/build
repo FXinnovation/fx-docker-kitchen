@@ -1,0 +1,35 @@
+#!/bin/sh
+set -ex
+
+# Build Dependencies
+apk add \
+  --no-cache \
+  --virtual build-dependencies \
+  build-base \
+  curl
+
+# Kitchen
+gem install --no-document test-kitchen -v ${KITCHEN_VERSION}
+gem install --no-document kitchen-ansible -v ${KITCHEN_ANSIBLE_VERSION}
+gem install --no-document kitchen-terraform -v ${KITCHEN_TERRAFORM_VERSION}
+gem install --no-document kitchen-cloudformation -v ${KITCHEN_CLOUDFORMATION_VERSION}
+
+# Inspec
+gem install --no-document inspec -v ${INSPEC_VERSION}
+
+# Terraform
+curl -sSLo /resources/terraform_${TERRAFORM_VERSION}_linux_amd64.zip \
+  https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip
+
+unzip /resources/terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /usr/local/bin
+
+# Misc Depedencies
+apk add --no-cache \
+  ca-certificates=${CACERTIFICATES_VERSION} \
+  git=${GIT_VERSION} \
+  openssh=${OPENSSH_VERSION}
+
+# Clean
+apk del build-dependencies
+
+# Hardening
