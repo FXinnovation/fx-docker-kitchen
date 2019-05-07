@@ -32,4 +32,7 @@ apk add --no-cache \
 # Clean
 apk del build-dependencies
 
-# Hardening
+# CIS Hardening
+touch /etc/login.defs
+chmod 0444 /etc/login.defs
+chmod 0600 /etc/shadow
