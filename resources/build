@@ -13,6 +13,7 @@ gem install --no-document test-kitchen -v ${KITCHEN_VERSION}
 gem install --no-document kitchen-ansible -v ${KITCHEN_ANSIBLE_VERSION}
 gem install --no-document kitchen-terraform -v ${KITCHEN_TERRAFORM_VERSION}
 gem install --no-document kitchen-cloudformation -v ${KITCHEN_CLOUDFORMATION_VERSION}
+gem install --no-document kitchen-ec2 -v ${KITCHEN_EC2_VERSION}
 
 # Inspec
 gem install --no-document inspec -v ${INSPEC_VERSION}
