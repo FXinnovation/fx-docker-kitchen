@@ -1,19 +1,21 @@
-FROM ruby:2.6.3-alpine3.9
+ARG RUBYIMAGE_VERSION=2.6.6-alpine3.12
+FROM ruby:${RUBYIMAGE_VERSION}
+ARG RUBYIMAGE_VERSION
 
 ARG BUILD_DATE
 ARG VCS_REF
 ARG VERSION
 
-ENV CACERTIFICATES_VERSION="20190108-r0" \
-    GIT_VERSION="2.20.1-r0" \ 
-    INSPEC_VERSION="4.3.2" \
-    KITCHEN_VERSION="2.2.0" \
-    KITCHEN_ANSIBLE_VERSION="0.49.1" \
-    KITCHEN_TERRAFORM_VERSION="4.8.0" \
-    KITCHEN_CLOUDFORMATION_VERSION="1.4.1" \
-    KITCHEN_EC2_VERSION="3.0.1" \
-    OPENSSH_VERSION="7.9_p1-r5" \
-    TERRAFORM_VERSION="0.11.13"
+ENV CACERTIFICATES_VERSION="20191127-r4" \
+    GIT_VERSION="2.26.2-r0" \
+    INSPEC_VERSION="4.23.15" \
+    KITCHEN_VERSION="2.2.1" \
+    KITCHEN_ANSIBLE_VERSION="0.52.0" \
+    KITCHEN_TERRAFORM_VERSION="5.5.0" \
+    KITCHEN_CLOUDFORMATION_VERSION="1.5.0" \
+    KITCHEN_EC2_VERSION="3.8.0" \
+    OPENSSH_VERSION="8.3_p1-r0" \
+    TERRAFORM_VERSION="0.11.14"
 
 ADD ./resources /resources
 
@@ -22,7 +24,7 @@ RUN /resources/build && rm -rf /resources
 LABEL "maintainer"="cloudsquad@fxinnovation.com" \
       "org.label-schema.name"="kitchen" \
       "org.label-schema.base-image.name"="docker.io/library/ruby" \
-      "org.label-schema.base-image.version"="2.6.3-alpine3.9" \
+      "org.label-schema.base-image.version"=$RUBYIMAGE_VERSION \
       "org.label-schema.description"="Kitchen in a container" \
       "org.label-schema.url"="https://kitchen.ci/" \
       "org.label-schema.vcs-url"="https://scm.dazzlingwrench.fxinnovation.com/fxinnovation-public/docker-kitchen" \
