@@ -1,5 +1,18 @@
 # CHANGELOG
 
+# 1.1.0
+
+* (BREAKING) chore: pins kitchen to 3.0.0
+* (BREAKING) chore: pins kitchen terraform to 6.0.0
+* (BREAKING) chore: pins terraform to 1.0.4
+* chore: pins ruby base image to 3.0.2-alpine3.14
+* chore: pins openssh to 8.6_p1-r2
+* chore: pins kitchen ec2 to 3.10.0
+* chore: pins kitchen ansible to 0.56.0
+* chore: pins inspec to 4.38.9
+* chore: pins git to 2.32.0-r0
+* chore: pins cacertificates to 20191127-r5
+
 # 0.3.0
 
 * feat: bump kitchen version to `2.2.1`
