@@ -1,6 +1,6 @@
 # CHANGELOG
 
-# 1.1.0
+# 1.0.0
 
 * (BREAKING) feat: pins kitchen to 3.0.0
 * (BREAKING) chore: pins kitchen terraform to 6.0.0
