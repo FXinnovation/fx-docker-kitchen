@@ -9,7 +9,7 @@
 * chore: pins openssh to 8.6_p1-r2
 * chore: pins kitchen ec2 to 3.10.0
 * chore: pins kitchen ansible to 0.56.0
-* chore: pins inspec to 4.41.2 
+* chore: pins inspec to 4.41.2
 * chore: pins git to 2.32.0-r0
 * chore: pins cacertificates to 20191127-r5
 * chore: pins pre-commit-hooks to v4.0.1
